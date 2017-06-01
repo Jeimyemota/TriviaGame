@@ -20,7 +20,7 @@ function Z(x) {
 function renderQuestion() {
 	test = Z("test");
 	if(pos >= questions.length) {
-		test.innerHTML = "<h2>You got"+correct+" of"+questions.length+" questions correct</h2>";
+		test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
 			Z("status").innerHTML = "Test Completed";
 				pos = 0;
 				correct = 0;
@@ -33,7 +33,7 @@ function renderQuestion() {
 	cB = questions[pos][2];
 	cC = questions[pos][3];
 	cD = questions[pos][4];
-	test.innerHTML = "<h3" +question+"</h3>";
+	test.innerHTML = "<h3>" +question+"</h3>";
 	test.innerHTML += "<input type='radio' name='choices' value='A'> " +cA+"<br>";
 	test.innerHTML += "<input type='radio' name='choices' value='B'> " +cB+"<br>";
 	test.innerHTML += "<input type='radio' name='choices' value='C'> " +cC+"<br>";
@@ -48,11 +48,16 @@ function checkAnswer() {
 			choice = choices[i].value;
 		}
 	}
-	if(choice == questions[pos][4]){
+	if(choice == questions[pos][5]){
 		correct++;
 	}
 	pos++;
 	renderQuestion();
 }
+		
+    
+
 
 window.addEventListener("load", renderQuestion, false);
+
+
